@@ -2,9 +2,9 @@
 
 This Product Generation Executable (PGE) invokes the `alos2app.py` in ISCE2, which is the work of many including [Professor Cunren Liang](https://scholar.google.com/citations?user=d9VwuYsAAAAJ&hl=en). The tutorial with references for this ISCE2 application can be found [here](https://github.com/isce-framework/isce2/blob/main/examples/input_files/alos2/alos2_tutorial.txt).
 
-This PGE is a major overhaul of the IFG-generator found [here](https://github.com/aria-jpl/ariamh/blob/alos2/interferogram/alos/create_alos2_ifg.py), translating the python scripts into [notebooks](https://jupyter.org/) and orchestrating them with [papermill](https://papermill.readthedocs.io/en/latest/). We have also provided a end-to-end test using sample ALOS-2 data using the [HYSDS](https://github.com/hysds) operational framework.
+This PGE is a major overhaul of the IFG-generator found [here](https://github.com/aria-jpl/ariamh/blob/alos2/interferogram/alos/create_alos2_ifg.py), translating the python scripts into [notebooks](https://jupyter.org/) and orchestrating them with [papermill](https://papermill.readthedocs.io/en/latest/). We have also provided an end-to-end test using sample ALOS-2 data using the [HYSDS](https://github.com/hysds) operational framework.
 
-The original authors of the ALOS-2 PGE are [David Bekaert](https://www.davidbekaert.com/) and [Mohammed Karim](https://github.com/mkarim2017). The current PGE is still a work in progress and important To-Dos can be found at the end of this readme.
+The original authors of the ALOS-2 PGE are [David Bekaert](https://www.davidbekaert.com/) and [Mohammed Karim](https://github.com/mkarim2017). The current PGE is still a work in progress and important to-dos can be found at the end of this readme.
 
 The major improvements are:
 
@@ -24,7 +24,7 @@ This is where development occurs. The sample data is downloaded to this director
 
 ### tests/
 
-This is where we copy the relevant data (using file-aliases) and run the papermill script that calls those from the Notebook directory.
+This directory provides a setup to test the PGE within a docker container. There is currently only one end-to-end test.
 
 ### ifg-tools/
 
@@ -33,7 +33,7 @@ This is where we store a few commonly used functions as python files including r
 
 ## Running Locally
 
-Because we use a miniconda docker container, we believe that the operational behavior can be pretty well simulated using `conda`. Here are some rough instructions.
+Because we use a miniconda docker container, we believe that the operational behavior is well simulated using `conda`. Here are some rough instructions for setting up a local `conda` environment.
 
 1. `conda env create -f /home/ops/alos2app_pge/environment.yml`
 2. `python -m ipykernel install --user`
@@ -72,7 +72,8 @@ See [tests/README.md](tests/readme.md), where we provide some more details of se
 
 ## To Dos
 
-- Ensuring short-circuiting of the PGE, i.e. if a product exists than throw an exception
+- Include short-circuiting of the PGE, i.e. if a product exists than throw an exception.
+- Download water mask from specified s3 buckets (currently uses ISCE2 `wbd.py`)
 - Add Imaging Geometry and Radar Metadata to the NetCDF
 - Create Browse PNGs for distribution
 
