@@ -1,0 +1,19 @@
+name: isce2_env
+channels:
+ - conda-forge
+ - anaconda
+ - defaults
+dependencies:
+ - python=3.8
+ - isce2
+ - jupyter
+ - papermill
+ - ipykernel
+ - xarray
+ - rasterio
+ - shapely
+ - dateparser
+ - jinja2
+ - numpy
+ - matplotlib
+ - fiona

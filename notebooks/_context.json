@@ -1,0 +1,124 @@
+{
+  "_command": "/home/ops/ariamh/interferogram/alos/create_alos2_ifg.sh",
+  "_disk_usage": "200GB",
+  "_prov": {
+    "wasGeneratedBy": "task_id:40849cff-93d8-4aef-b1a3-34d607ff4161"
+  },
+  "azimuth_looks": "12",
+  "burst_overlap": "85.0",
+  "container_image_id": "sha256:2a3dab0bf8f21719d4e90eaafae8ff4b3cb05547917ad361af90649179297fd0",
+  "container_image_name": "container-aria-jpl_ariamh:alos2",
+  "container_image_url": "s3://s3-us-west-2.amazonaws.com/aria-ops-code-bucket/container-aria-jpl_ariamh:alos2.tar.gz",
+  "container_mappings": {
+    "/home/ops/.aws": [
+      "/home/ops/.aws",
+      "ro"
+    ],
+    "/home/ops/.netrc": [
+      "/home/ops/.netrc"
+    ],
+    "/home/ops/verdi/etc/settings.conf": "/home/ops/ariamh/conf/settings.conf"
+  },
+  "container_specification": {
+    "digest": "sha256:2a3dab0bf8f21719d4e90eaafae8ff4b3cb05547917ad361af90649179297fd0",
+    "id": "container-aria-jpl_ariamh:alos2",
+    "url": "s3://s3-us-west-2.amazonaws.com/aria-ops-code-bucket/container-aria-jpl_ariamh:alos2.tar.gz",
+    "version": "alos2"
+  },
+  "dem_type": "SRTM+v3",
+  "filter_strength": "0.6",
+  "ifg_type": "scansar",
+  "job_priority": 5,
+  "job_specification": {
+    "command": "/home/ops/ariamh/interferogram/alos/create_alos2_ifg.sh",
+    "container": "container-aria-jpl_ariamh:alos2",
+    "disk_usage": "200GB",
+    "id": "job-create-alos2-ifg:alos2",
+    "imported_worker_files": {
+      "/home/ops/.aws": [
+        "/home/ops/.aws",
+        "ro"
+      ],
+      "/home/ops/.netrc": [
+        "/home/ops/.netrc"
+      ],
+      "/home/ops/verdi/etc/settings.conf": "/home/ops/ariamh/conf/settings.conf"
+    },
+    "job-version": "alos2",
+    "params": [
+      {
+        "destination": "context",
+        "name": "secondary_product",
+        "value": "ALOS2041643250-150301.zip"
+      },
+      {
+        "destination": "context",
+        "name": "reference_product",
+        "value": "ALOS2047853250-150412.zip"
+      },
+      {
+        "destination": "context",
+        "name": "dem_type",
+        "value": "SRTM+v3"
+      },
+      {
+        "destination": "context",
+        "name": "ifg_type",
+        "value": "scansar"
+      },
+      {
+        "destination": "context",
+        "name": "azimuth_looks",
+        "value": "12"
+      },
+      {
+        "destination": "context",
+        "name": "range_looks",
+        "value": "30"
+      },
+      {
+        "destination": "context",
+        "name": "burst_overlap",
+        "value": "85.0"
+      },
+      {
+        "destination": "context",
+        "name": "filter_strength",
+        "value": "0.6"
+      },
+      {
+        "destination": "localize",
+        "name": "localize_url",
+        "value": [
+          {
+            "url": "https://hysds-v2-dev-product-bucket.s3-us-west-2.amazonaws.com/datasets/ALOS2-SLC/WD1/20150301/ALOS2041643200-150301.zip"
+          },
+          {
+            "url": "https://hysds-v2-dev-product-bucket.s3-us-west-2.amazonaws.com/datasets/ALOS2-SLC/WD1/20150412/ALOS2047853200-150412.zip"
+          }
+        ]
+      }
+    ],
+    "post": [
+      "hysds.utils.triage"
+    ],
+    "recommended-queues": [
+      "standard_product-s1gunw-topsapp"
+    ],
+    "resource": "jobspec",
+    "soft_time_limit": 21600,
+    "time_limit": 21800
+  },
+  "localize_urls": [
+    {
+      "url": "https://hysds-v2-dev-product-bucket.s3-us-west-2.amazonaws.com/datasets/ALOS2-SLC/WD1/20150301/ALOS2041643200-150301.zip"
+    },
+    {
+      "url": "https://hysds-v2-dev-product-bucket.s3-us-west-2.amazonaws.com/datasets/ALOS2-SLC/WD1/20150412/ALOS2047853200-150412.zip"
+    }
+  ],
+  "range_looks": "30",
+  "secondary_product": "ALOS2041643200-150301.zip",
+  "reference_product": "ALOS2047853200-150412.zip",
+  "tag": "test"
+}

@@ -1,0 +1,102 @@
+settings.conf
+.netrc
+
+*.pyc
+__pycache__
+settings.conf
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+**/.vscode/
+*.sw[po]
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# General
+.DS_Store
+
+# Data Files
+*.zip
+*.EOF
+*.nc
+*.tif
+*.xml
+*.wbd.json
+*.hdr
+*.vrt
+*.cpt
+*.wbd
+*.geo
+*.html
+*.json
+*.rdr
+*.off
+*.full
+*.int
+*.cor
+*.slc
+*.wgs84
+*.hgt
+*_groups.json
+*.nc.md5
+*.png
+*.dataset.json
+*.txt
+*.txt
+*.xrd
+*.xsd
+*.bak
+*.dem
+*.safe
+*.int
+*.amp
+*.isce
+*.los
+*.phsig
+*.unw
+*.ion
+*.lat
+*.float
+*.geojson
+*.sim
+*.lon
+*.conncomp
+**/PICKLE/
+**/IMG-HH-*-WBDR1.1__D-F*
+**/LED-*-WBDR1.1__D
+**/VOL-*-WBDR1.1__D
+
+
+
+# Log files
+*.log
+*isce.log*
+
+#Permit some data files locally
+!tops_groups.json
+!topsApp_standard_product.xml.tmpl
+
+# test files
+!tests/
+
+# Config files add back
+!conf/dataset_versions.json
+
+# Ignore Notebooks
+*.ipynb
+!notebooks/0_Download_from_s3.ipynb
+!notebooks/1_Get_Metadata.ipynb
+!notebooks/2_Downloading_the_DEM.ipynb
+!notebooks/3_Water_Mask.ipynb
+!notebooks/4_SAR_Processing.ipynb
+!notebooks/5_Packaging.ipynb
+
+# Ingore contexts
+!notebooks/_context.json
+!tests/e2e_test_1/_context.json

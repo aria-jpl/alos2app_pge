@@ -1,0 +1,10 @@
+version: '2'
+services:
+  test:
+    image: alos2app_img
+    volumes:
+      - ../..:/home/ops/alos2app_pge
+    command: >
+             bash -c "cd /home/ops/alos2app_pge/tests/e2e_test_1
+             && source ~/.bashrc
+             && python /home/ops/alos2app_pge/create_alos2_ifg.py"
