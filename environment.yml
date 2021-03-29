@@ -16,4 +16,5 @@ dependencies:
  - jinja2
  - numpy
  - matplotlib
+ - rioxarray
  - fiona
