@@ -61,6 +61,8 @@ celerybeat-schedule
 *.phsig
 *.unw
 *.ion
+*.std
+*.win
 *.lat
 *.float
 *.geojson
