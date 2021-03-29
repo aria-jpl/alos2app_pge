@@ -17,4 +17,5 @@ dependencies:
  - numpy
  - matplotlib
  - rioxarray
+ - netcdf4
  - fiona
